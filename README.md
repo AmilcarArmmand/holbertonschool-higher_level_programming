@@ -12,4 +12,4 @@
 ---
 
 ### Author
-* **Amilcar Armmand** - [AmilcarArmmand](https://github.com/AmilcarArmmand)
+* [Amilcar Armmand](https://github.com/AmilcarArmmand)
