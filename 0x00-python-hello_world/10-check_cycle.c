@@ -12,20 +12,23 @@ int check_cycle(listint_t *list)
 {
 	listint_t *tortoise;
 	listint_t *hare;
+
+	tortoise = list;
+	hare = list;
+
 /* check if list exists and has more than 1 element */
 	if (list == NULL || list->next == NULL)
 		return (0);
-
-/* slow pointer moves 1 step forward while fast pointer moves 2 steps */
-		tortoise = list->next;
-		hare = list->next->next;
 
 	while (tortoise && hare && hare->next)
 	{
 		if (tortoise == hare)
 			return (1);
+
+/* slow pointer moves 1 step forward while fast pointer moves 2 steps */
 		tortoise = tortoise->next;
-		hare = hare->next;
+		hare = (hare->next)->next;
 	}
+
 	return (0);
 }
