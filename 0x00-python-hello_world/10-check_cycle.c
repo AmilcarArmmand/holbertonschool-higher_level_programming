@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 	listint_t *hare;
 
 	tortoise = list;
-	hare = list;
+	hare = list->next;
 
 /* check if list exists and has more than 1 element */
 	if (list == NULL || list->next == NULL)
