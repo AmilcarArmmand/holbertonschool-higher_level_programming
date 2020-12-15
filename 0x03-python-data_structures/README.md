@@ -55,7 +55,7 @@ What you should learn from this project:
 
 
 ### [9. Find the max](./9-max_integer.py)
-* Write a function that finds the biggest integer of a list. 
+* Write a function that finds the biggest integer of a list.
 
 
 ### [10. Only by 2](./10-divisible_by_2.py)
