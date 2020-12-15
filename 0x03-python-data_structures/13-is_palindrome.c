@@ -10,13 +10,21 @@
  */
 listint_t *reverse_list(listint_t **head)
 {
-	listint_t current, pervious, next;
+	listint_t *current, *next, *prev;
+
+	prev = NULL;
+	current = *head;
 
 	while (current)
 	{
-
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
 	}
-	return (current);
+	(*head) = prev;
+
+	return (*head);
 }
 
 /**
@@ -28,8 +36,7 @@ listint_t *reverse_list(listint_t **head)
 int is_palindrome(listint_t **head)
 {
 	const listint_t *current;
-	size_t nodes;
-	int index;
+	int nodes;
 
 	current = *head;
 	nodes = 0;
@@ -39,13 +46,10 @@ int is_palindrome(listint_t **head)
 	while (current)
 	{
 		nodes += 1;
+		printf("%d", current->n);
 		current = current->next;
 	}
 	printf("Nodes = %d \nI and the captain now!\n", nodes);
-	for (index = 0; index < nodes; index++)
-	{
-		if (current[nodes]->n);
-	}
 
 	return (0);
 }
