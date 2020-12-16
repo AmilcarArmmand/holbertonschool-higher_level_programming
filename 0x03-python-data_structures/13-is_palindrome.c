@@ -45,10 +45,14 @@ int is_palindrome(listint_t **head)
 	while (current)
 	{
 		if (current->n != rev->n)
+		{
+			free(rev);
 			return (0);
+		}
 		current = current->next;
 		rev = rev->next;
 	}
+	free(rev);
 
 	return (1);
 }
