@@ -34,26 +34,21 @@ listint_t *reverse_list(listint_t **head)
 int is_palindrome(listint_t **head)
 {
 	listint_t *current, *rev;
-	int nodes;
 
 	current = *head;
 	rev = NULL;
 
-	rev = reverse_list(&current);
-	nodes = 0;
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
 
-	/* make copy of list in reverse */
-	/* if temp->n != reversed->n exit */
+	rev = reverse_list(&current);
 	while (current)
 	{
-		nodes += 1;
-		printf("%d, %d\n", current->n, rev->n);
 		if (current->n != rev->n)
 			return (0);
 		current = current->next;
 		rev = rev->next;
 	}
-	printf("Nodes = %d \nI am the captain now!\n", nodes);
 
 	return (1);
 }
