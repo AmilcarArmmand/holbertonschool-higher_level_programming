@@ -2,6 +2,8 @@
 #include <Python.h>
 #include <object.h>
 #include <listobject.h>
+#include <ctype.h>
+#include <stdarg.h>
 
 /**
  * print_python_list_info - function that prints CPython reference info
