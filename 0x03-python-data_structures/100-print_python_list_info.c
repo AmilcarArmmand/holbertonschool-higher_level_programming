@@ -1,14 +1,27 @@
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
 #include <object.h>
 #include <listobject.h>
-#include <Python.h>
 
 /**
  * print_python_list_info - function that prints CPython reference info
  *
- * @p: pointer to PyObject
+ * @p: pointer to a PyObject datatype structure
  * Return: No return value
  */
 void print_python_list_info(PyObject *p)
 {
+	/* elements in the PyObjectlist */
+	Py_ssize_t list_size = NULL;
 
+	/* initialize */
+	list_size = PyList_Size(p);
+	/* what does this do */
+
+	printf("[*] Size of the Python List = %d\n", (int)list_size);
+/*	printf("[*] Allocated = %d\n", nodes_allocated_maybe_size_t); */
+/*	while (p)  */
+/*	{ loop through the elements in p that are not NULL  */
+	/*	printf("Element %d: %s\n", p->element[i], p->type);  */
+/*	}  */
 }
