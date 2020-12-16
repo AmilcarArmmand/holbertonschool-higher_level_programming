@@ -1,7 +1,5 @@
 #include "lists.h"
 
-
-
 /**
  * reverse_list - function reverses a singly linked list
  *
@@ -35,10 +33,13 @@ listint_t *reverse_list(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	const listint_t *current;
+	listint_t *current, *rev;
 	int nodes;
 
 	current = *head;
+	rev = NULL;
+
+	rev = reverse_list(&current);
 	nodes = 0;
 
 	/* make copy of list in reverse */
@@ -46,10 +47,13 @@ int is_palindrome(listint_t **head)
 	while (current)
 	{
 		nodes += 1;
-		printf("%d", current->n);
+		printf("%d, %d\n", current->n, rev->n);
+		if (current->n != rev->n)
+			return (0);
 		current = current->next;
+		rev = rev->next;
 	}
-	printf("Nodes = %d \nI and the captain now!\n", nodes);
+	printf("Nodes = %d \nI am the captain now!\n", nodes);
 
-	return (0);
+	return (1);
 }
