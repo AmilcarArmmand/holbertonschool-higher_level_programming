@@ -2,6 +2,8 @@
 """
 Square: Class that defines a square
 """
+
+
 class Square:
     """ Empty class """
     pass
