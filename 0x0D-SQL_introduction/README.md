@@ -98,5 +98,5 @@
 
 ---
 
-## Author :balck_nib:
+## Author :black_nib:
 * **Amilcar Armmand** - [AmilcarArmmand](https://github.com/AmilcarArmmand)
