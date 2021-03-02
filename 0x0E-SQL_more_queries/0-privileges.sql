@@ -1,5 +1,4 @@
 -- MySQL script that lists all privileges for users on server in localhost
--- user user_0d_1
+-- Show grants for user_0d_1 and user_0d_2 on localhost
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
--- user user_0d_2
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
