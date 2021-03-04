@@ -1,3 +1,6 @@
--- script that lists all rows of the table first_table
+-- script that displays the average temperature (Fahrenheit)
+-- by city ordered by temperature (descending).
 -- from the MySQL database hbtn_0c_0 in MySQL server
-SELECT * FROM temperatures;
+SELECT `city`, AVG(`value`) AS `avg_temp` FROM `temperatures`
+       GROUP BY `city`
+       ORDER BY `avg_temp` DESC;
