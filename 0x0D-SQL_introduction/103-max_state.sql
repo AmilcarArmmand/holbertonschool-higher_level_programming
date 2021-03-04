@@ -1,3 +1,6 @@
--- script that lists all rows of the table first_table
--- from the MySQL database hbtn_0c_0 in MySQL server
-SELECT * FROM temperatures;
+--  script that displays the max temperature of each state
+-- (ordered by State name).
+SELECT state, MAX(value) AS max_temp FROM temperatures
+       GROUP By state
+       ORDER BY state ASC
+       LIMIT 3;
