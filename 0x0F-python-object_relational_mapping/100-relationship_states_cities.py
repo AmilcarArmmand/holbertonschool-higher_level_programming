@@ -15,10 +15,12 @@ if __name__ == "__main__":
                                                                       argv[3]))
 
     Base.metadata.create_all(engin)
+
     Session = sessionmaker(bind=engin)
     session = Session()
-    my_state = State(name="California")
-    my_state.my_city = [City(name="San Francisco")]
+    my_state = State(name='California')
+    my_city = City(name="San Francisco", state_id=my_state.id)
+    my_state.cities.append(my_city)
     session.add(my_state)
     session.commit()
     session.close()
