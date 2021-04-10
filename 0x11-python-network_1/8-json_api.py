@@ -13,16 +13,13 @@ if __name__ == "__main__":
     else:
         q = ""
     r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
-    if r.status_code == 204 or r.json() == {}:
-        print("No result")
-    else:
-        try:
-            j = r.json()
-            id = j.get('id')
-            name = j.get('name')
-            if len(j).__eq__(0) or not id or not name:
-                print("No result")
-            else:
-                print("[{}] {}".format(j.get('id'), j.get('name')))
-        except:
-            print("Not a valid JSON")
+    try:
+        j = r.json()
+        id = j.get('id')
+        name = j.get('name')
+        if len(j).__eq__(0) or not id or not name:
+            print("No result")
+        else:
+            print("[{}] {}".format(j.get('id'), j.get('name')))
+    except:
+        print("Not a valid JSON")
