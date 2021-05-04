@@ -2,7 +2,7 @@
 /* using the Star Wars API https://swapi-api.hbtn.io/ prints the title of the */
 /* Star Wars movie where the episode number matches a given integer. */
 const request = require('request');
-const url = process.argv[2]
+const url = process.argv[2];
 
 request(url, function (error, response, body) {
   if (error) {
