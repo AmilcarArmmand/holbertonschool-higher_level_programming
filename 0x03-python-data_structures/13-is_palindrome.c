@@ -8,9 +8,10 @@
  */
 listint_t *reverse_list(listint_t **head)
 {
-	listint_t *current, *next, *prev;
+	listint_t *current = NULL;
+	listint_t *next = NULL;
+	listint_t *prev = NULL;
 
-	prev = NULL;
 	current = *head;
 
 	while (current)
@@ -33,29 +34,44 @@ listint_t *reverse_list(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current, *rev;
+	listint_t *current = NULL;
+	listint_t *reversed = NULL;
+	listint_t *temp = NULL;
+	int len = 0, i = 0, flag;
 
 	current = *head;
-	rev = NULL;
+	temp = *head;
+	flag = 1;
 
 	if (head == NULL)
 		return (0);
-
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-
-	rev = reverse_list(&current);
-	while (current)
+	for (; temp; len++)
+		temp = temp->next;
+	printf("There are %d nodes in this list\nI am the captain now!\n", len);
+	for (i = 0; i < len / 2; i++, current = current->next)
 	{
-		if (current->n != rev->n)
-		{
-			free(rev);
-			return (0);
-		}
-		current = current->next;
-		rev = rev->next;
+		add_nodeint_end(&reversed, current->n);
+		printf("Inside for loop: current list %d\t", current->n);
+		printf("Inside for loop: reversed list %d\n", reversed->n);
 	}
-	free(rev);
+	current = *head;
+	for (; current; current = current->next, reversed = reversed->next)
+	{
+		printf("While loop list: %d\t", current->n);
+		printf("Reversed list: %d\n", reversed->n);
+		current = current->next;
+		reversed = reversed->next;
+		/*if (current->n != reversed->n)*/
+		{
+/*			flag = 0;*/
+/*			break;*/
+		}
+		printf("Hot\n");
+	}
+	printf("Sandwich\n");
+	free_listint(reversed);
 
-	return (1);
+	return (flag);
 }

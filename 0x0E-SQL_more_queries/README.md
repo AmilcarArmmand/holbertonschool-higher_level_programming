@@ -25,14 +25,19 @@ What you should learn from this project:
   * If the user user_0d_1 already exists, your script should not fail
 
 ### [2. Read user](./2-create_read_user.sql)
+* a script that creates the database hbtn_0d_2 and the user user_0d_2.
 
 ### [3. Always a name](./3-force_name.sql)
+* a script that creates the table force_name on your MySQL server.
 
 ### [4. ID can't be null](./4-never_empty.sql)
+*  a script that creates the table id_not_null on your MySQL server.
 
 ### [5. Unique ID](./5-unique_id.sql)
+* a script that creates the table unique_id on your MySQL server.
 
 ### [6. States table](./6-states.sql)
+* a script that creates the database hbtn_0d_usa and the table states (in the database hbtn_0d_usa) on your MySQL server.
 
 ### [7. Cities table](./7-cities.sql)
 

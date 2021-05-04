@@ -9,8 +9,8 @@ class Rectangle:
         """ Initialize new instance of a rectangle.
 
         Args:
-            width (int):
-            height (int):
+            width (int): The width of the new rectangle object.
+            height (int): The height of the new rectanlge object.
 
         """
         self.width = width
@@ -33,11 +33,7 @@ class Rectangle:
         @property
         def height(self):
             """ Set the current height of the rectangle. """
-            if type(value) != int:
-                raise TypeError("height must be an integer")
-            if value < 0:
-                raise ValueError("height must be >= 0")
-            self.__height = value
+            return (self.__height)
 
         @height.setter
         def height(self, value):
