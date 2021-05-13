@@ -1,4 +1,4 @@
-/* JavaScript script that adds a <li> element to a list on click of the tag DIV#add_item */
+/* JavaScript script updates the text of the <header> element to New Header!!! on click */
 $('DIV#update_header').click(function () {
   $('header').text('New Header!!!');
 });
